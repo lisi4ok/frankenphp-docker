@@ -2,11 +2,9 @@ FROM dunglas/frankenphp:1.7.0-php8.4-alpine
 
 LABEL authors="Zaio Klepoyshkov <lisi4ok@gmail.com>"
 
-#ARG UID=${UID:-1000}
-#ARG UID=${UID:-1000}
+ARG UID=${UID:-1000}
+ARG UID=${UID:-1000}
 #ARG USER=${USER:-user}
-ARG UID=1000
-ARG UID=1000
 
 ENV UID=${UID}
 ENV GID=${GID}
@@ -51,54 +49,54 @@ RUN set -eux; \
 
 RUN install-php-extensions \
     @composer \
-#    apcu \
-#    bcmath \
-#    bz2 \
-#    calendar \
-#    exif \
-#    ftp \
-#    ffi \
-#    swoole \
-#    gd \
-#    gettext \
-#    gmp \
-#    intl \
-#    json \
-#    ldap \
-#    mbstring \
-#    mysqli \
-#    opcache \
-#    pcntl \
-#    pdo_mysql \
-#    pdo_pgsql \
-#    pdo_sqlite \
-#    pdo_sqlsrv \
-#    pdo_oci \
-#    pgsql \
-#    oci8 \
-#    sqlsrv \
-#    mongodb \
-#    cassandra \
-#    redis \
-#    soap \
-#    sockets \
-#    xml \
-#    yaml \
-#    xlswriter \
-#    uuid \
-#    uuid \
-#    timezonedb \
-#    tidy \
-#    yar \
-#    xdebug \
-#    zip \
-#    zmq \
-#    amqp \
-#    shmop \
-#    ssh2 \
-#    xsl \
-#    yaml \
-#    imagick \
+    apcu \
+    bcmath \
+    bz2 \
+    calendar \
+    exif \
+    ftp \
+    ffi \
+    swoole \
+    gd \
+    gettext \
+    gmp \
+    intl \
+    json \
+    ldap \
+    mbstring \
+    mysqli \
+    opcache \
+    pcntl \
+    pdo_mysql \
+    pdo_pgsql \
+    pdo_sqlite \
+    pdo_sqlsrv \
+    pdo_oci \
+    pgsql \
+    oci8 \
+    sqlsrv \
+    mongodb \
+    cassandra \
+    redis \
+    soap \
+    sockets \
+    xml \
+    yaml \
+    xlswriter \
+    uuid \
+    uuid \
+    timezonedb \
+    tidy \
+    yar \
+    xdebug \
+    zip \
+    zmq \
+    amqp \
+    shmop \
+    ssh2 \
+    xsl \
+    yaml \
+    imagick \
     psr \
     zephir_parser \
     phalcon \
