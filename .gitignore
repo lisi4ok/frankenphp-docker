@@ -1,2 +1,6 @@
 /cache/
 /config/development/
+
+.idea
+**/*.pem
+**/.DS_Store

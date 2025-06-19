@@ -1,0 +1,25 @@
+services:
+  php:
+    container_name: php
+    build:
+      context: .docker
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80" # HTTP
+      - "443:443" # HTTPS
+      - "443:443/udp" # HTTP/3
+    volumes:
+      - ./:/app
+      - caddy_data:/data
+      - caddy_config:/config
+    tty: true
+    networks:
+      - network
+
+networks:
+  network:
+
+volumes:
+  caddy_data:
+  caddy_config:
