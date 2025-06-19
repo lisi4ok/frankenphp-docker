@@ -10,8 +10,8 @@ ARG UID=1000
 
 ENV UID=${UID}
 ENV GID=${GID}
-ENV FRANKENPHP_CONFIG="worker /app/public/index.php"
-ENV SERVER_NAME="phalcon.lo"
+#ENV FRANKENPHP_CONFIG="worker /app/public/index.php"
+#ENV SERVER_NAME="phalcon.lo"
 
 RUN set -eux; \
     apk update && \
