@@ -149,6 +149,56 @@ services:
       - network
 
 
+  cassandra:
+    container_name: cassandra
+    image: cassandra:latest
+    restart: unless-stopped
+    environment:
+      - CASSANDRA_USER=${CASSANDRA_USERNAME}
+      - CASSANDRA_PASSWORD=${CASSANDRA_PASSWORD}
+    ports:
+      - "${CASSANDRA_PORT}:${CASSANDRA_PORT}"
+    tty: true
+    volumes:
+      - ./data/cassandra:/var/lib/cassandra
+    networks:
+      - network
+
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT}:${REDIS_PORT}"
+    volumes:
+      - ./data/redis:/data/redis
+    networks:
+      - network
+
+  valkey:
+    container_name: valkey
+    image: valkey/valkey:alpine
+    restart: unless-stopped
+    ports:
+      - "${VALKEY_PORT}:${VALKEY_PORT}"
+    volumes:
+      - ./data/valkey:/data/valkey
+    networks:
+      - network
+
+  keydb:
+    container_name: keydb
+    image: eqalpha/keydb:alpine
+    restart: unless-stopped
+    ports:
+      - "${KEYDB_PORT}:${KEYDB_PORT}"
+    volumes:
+      - ./data/keydb:/data/keydb
+    networks:
+      - network
+
+
 networks:
   network:
 
