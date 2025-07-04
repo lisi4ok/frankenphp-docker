@@ -5,9 +5,9 @@ LABEL description="Alpine Linux | PHP 8.4 | FrankenPHP"
 LABEL version="0.0.1"
 LABEL extensions="php, composer, apcu, bcmath, bz2, calendar, exif, ftp, ffi, geos, grpc, swoole, gd, gettext, gmp, intl, imap, json, ldap, oauth, mbstring, mysqli, opcache, pcntl, pcov, pdo_mysql, pdo_pgsql, pdo_sqlite, pdo_sqlsrv, pdo_oci, pgsql, oci8, sqlsrv, mongodb, cassandra, redis, soap, solr, sockets, decimal, event, ev, dba, sync, csv, xml, yaml, xsl, xlswriter"
 
-ARG USER=${USER:-user}
 ARG UID=${UID:-1000}
 ARG GID=${GID:-1000}
+ARG USER=${USER:-user}
 ARG ENVIRONMENT=${ENVIRONMENT:-production}
 # Set environment variables from PHP
 ARG PHP_INI_DIR=${PHP_INI_DIR:-"/usr/local/etc/php"}

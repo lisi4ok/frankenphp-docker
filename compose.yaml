@@ -2,12 +2,12 @@ services:
   php:
     container_name: php
     build:
-      context: .docker
+      context: .container
       dockerfile: Dockerfile
       args:
-        USER: ${USER:-user}
         UID: ${UID:-1000}
         GID: ${GID:-1000}
+        USER: ${USER:-user}
         ENVIRONMENT: ${ENVIRONMENT:-production}
     restart: always
     ports:
@@ -48,7 +48,7 @@ services:
     ports:
       - "${PGADMIN_PORT}:${PGADMIN_PORT}"
     volumes:
-      - .docker/postgres/pgadmin-servers.json:/pgadmin4/servers.json
+      - .container/postgres/pgadmin-servers.json:/pgadmin4/servers.json
     depends_on:
       - postgres
     networks:

@@ -20,7 +20,7 @@
 
 ## Install && Start
 ```
-docker compose -f compose.yaml up -d
+docker compose up -d
 ```
 
 ## License
