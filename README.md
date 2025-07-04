@@ -20,6 +20,10 @@
 
 ## Install && Start
 ```
+cp -fi .env.example .env
+```
+
+```
 docker compose up -d
 ```
 
