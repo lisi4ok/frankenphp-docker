@@ -5,9 +5,10 @@ services:
       context: .docker
       dockerfile: Dockerfile
       args:
+        USER: ${USER:-user}
         UID: ${UID:-1000}
         GID: ${GID:-1000}
-        USER: ${USER:-user}
+        ENVIRONMENT: ${ENVIRONMENT:-production}
     restart: always
     ports:
       - "80:80" # HTTP
